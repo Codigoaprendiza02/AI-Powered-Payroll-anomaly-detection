@@ -1,0 +1,84 @@
+{
+  "run_id": "test-run-002",
+  "total_rows": 5,
+  "duplicate_rows": 0,
+  "columns": {
+    "emp_id": {
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str",
+      "flagged": false
+    },
+    "dept": {
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str",
+      "flagged": false
+    },
+    "title": {
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str",
+      "flagged": false
+    },
+    "basic_pay": {
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64",
+      "flagged": false
+    },
+    "days_present": {
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64",
+      "flagged": false
+    },
+    "business_days": {
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64",
+      "flagged": false
+    },
+    "ot_hours": {
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64",
+      "flagged": false
+    },
+    "ot_rate": {
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64",
+      "flagged": false
+    },
+    "take_home": {
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64",
+      "flagged": false
+    },
+    "loss_of_pay": {
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64",
+      "flagged": false
+    }
+  },
+  "impossible_value_rows": 0,
+  "schema_confidence": 1.0,
+  "mapped_columns": {
+    "employee_id": "emp_id",
+    "base_salary": "basic_pay",
+    "present_days": "days_present",
+    "overtime_hours": "ot_hours",
+    "lop_days": "loss_of_pay",
+    "department": "dept",
+    "designation": "title",
+    "total_working_days": "business_days",
+    "overtime_pay_per_hour": "ot_rate",
+    "net_salary": "take_home"
+  },
+  "unmapped_columns": [],
+  "skipped_features": [],
+  "warnings": []
+}

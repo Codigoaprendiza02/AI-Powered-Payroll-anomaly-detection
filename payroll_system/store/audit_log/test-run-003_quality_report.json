@@ -1,0 +1,58 @@
+{
+  "run_id": "test-run-003",
+  "total_rows": 5,
+  "duplicate_rows": 0,
+  "columns": {
+    "col_a": {
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64",
+      "flagged": false
+    },
+    "col_b": {
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str",
+      "flagged": false
+    },
+    "col_c": {
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "float64",
+      "flagged": false
+    },
+    "col_d": {
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str",
+      "flagged": false
+    },
+    "col_e": {
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str",
+      "flagged": false
+    }
+  },
+  "impossible_value_rows": 0,
+  "schema_confidence": 0.0,
+  "mapped_columns": {},
+  "unmapped_columns": [
+    "employee_id",
+    "base_salary",
+    "present_days",
+    "overtime_hours",
+    "lop_days",
+    "department",
+    "designation",
+    "total_working_days",
+    "overtime_pay_per_hour",
+    "net_salary"
+  ],
+  "skipped_features": [
+    "overtime_pay"
+  ],
+  "warnings": [
+    "SCHEMA_MISMATCH_WARNING"
+  ]
+}

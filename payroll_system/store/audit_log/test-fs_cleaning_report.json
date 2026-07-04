@@ -1,0 +1,26 @@
+{
+  "run_id": "test-fs",
+  "original_rows": 5,
+  "steps": {
+    "duplicates": 0,
+    "nulls": {
+      "rows_dropped_null_critical": 0,
+      "lop_days_recomputed": true,
+      "null_before": {},
+      "null_after": {}
+    },
+    "impossible_values": {},
+    "dtypes_enforced": [
+      "base_salary",
+      "present_days",
+      "total_working_days",
+      "overtime_hours",
+      "overtime_pay_per_hour",
+      "net_salary",
+      "lop_days"
+    ]
+  },
+  "rows_after_cleaning": 5,
+  "rows_removed_total": 0,
+  "removal_pct": 0.0
+}
