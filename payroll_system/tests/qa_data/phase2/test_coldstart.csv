@@ -1,0 +1,11 @@
+employee_id,department,designation,base_salary,present_days,total_working_days,overtime_hours,overtime_pay_per_hour,net_salary,lop_days
+E001,Engineering,Senior Engineer,85000,22,23,10,500,87500,1
+E002,HR,HR Manager,60000,23,23,0,0,60000,0
+E003,Finance,Analyst,45000,20,23,5,300,46500,3
+E004,Engineering,Junior Engineer,35000,14,23,0,0,24130,9
+E005,Sales,Sales Lead,55000,23,23,15,400,91000,0
+E006,Engineering,Senior Engineer,85000,22,23,0,0,85000,1
+E007,Finance,Analyst,45000,23,23,0,0,45000,0
+E008,HR,HR Manager,60000,10,23,0,0,26087,13
+E009,Sales,Sales Lead,55000,23,23,20,400,63000,0
+E010,Engineering,Junior Engineer,35000,23,23,0,0,180000,0

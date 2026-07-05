@@ -5,6 +5,8 @@ from datetime import datetime
 from pathlib import Path
 from config.settings import generate_run_id, AUDIT_LOG_DIR
 from pipelines.p1_feature import run_feature_pipeline
+from pipelines.p2_training import run_training_pipeline
+from pipelines.p3_inference import run_inference_pipeline
 
 class AlertManagerStub:
     def __init__(self, run_id: str):
@@ -42,7 +44,7 @@ def compute_md5(file_path: str) -> str:
             hasher.update(chunk)
     return hasher.hexdigest()
 
-def get_run_id_by_hash(file_hash: str) -> str or None:
+def get_run_id_by_hash(file_hash: str) -> str | None:
     hash_file = Path(AUDIT_LOG_DIR) / "file_hashes.json"
     if not hash_file.exists():
         return None
@@ -52,6 +54,37 @@ def get_run_id_by_hash(file_hash: str) -> str or None:
             return hashes.get(file_hash)
     except Exception:
         return None
+
+def update_pipeline_step_status(run_id: str, step_name: str, status: str):
+    runs_file = Path(AUDIT_LOG_DIR) / "runs.json"
+    if not runs_file.exists():
+        return
+    try:
+        with open(runs_file, "r") as f:
+            runs = json.load(f)
+            
+        for run in runs:
+            if run["run_id"] == run_id:
+                steps = run.setdefault("pipeline_steps", [])
+                found = False
+                for step in steps:
+                    if step["pipeline_step"] == step_name:
+                        step["status"] = status
+                        step["timestamp"] = datetime.utcnow().isoformat()
+                        found = True
+                        break
+                if not found:
+                    steps.append({
+                        "pipeline_step": step_name,
+                        "status": status,
+                        "timestamp": datetime.utcnow().isoformat()
+                    })
+                break
+                
+        with open(runs_file, "w") as f:
+            json.dump(runs, f, indent=2)
+    except Exception:
+        pass
 
 def log_run_start(run_id: str, file_path: str, file_hash: str):
     runs_file = Path(AUDIT_LOG_DIR) / "runs.json"
@@ -63,7 +96,7 @@ def log_run_start(run_id: str, file_path: str, file_hash: str):
         except Exception:
             runs = []
             
-    # Add new run entry
+    # Add new run entry with feature, training, and inference steps
     new_run = {
         "run_id": run_id,
         "file_path": file_path,
@@ -73,7 +106,9 @@ def log_run_start(run_id: str, file_path: str, file_hash: str):
         "completed_at": None,
         "error": None,
         "pipeline_steps": [
-            {"pipeline_step": "feature", "status": "RUNNING", "timestamp": datetime.utcnow().isoformat()}
+            {"pipeline_step": "feature", "status": "PENDING", "timestamp": datetime.utcnow().isoformat()},
+            {"pipeline_step": "training", "status": "PENDING", "timestamp": datetime.utcnow().isoformat()},
+            {"pipeline_step": "inference", "status": "PENDING", "timestamp": datetime.utcnow().isoformat()}
         ]
     }
     runs.append(new_run)
@@ -110,9 +145,8 @@ def log_run_complete(run_id: str):
             if run["run_id"] == run_id:
                 run["status"] = "COMPLETE"
                 run["completed_at"] = datetime.utcnow().isoformat()
-                # Update pipeline step status
                 for step in run.get("pipeline_steps", []):
-                    if step["pipeline_step"] == "feature":
+                    if step["status"] == "RUNNING":
                         step["status"] = "COMPLETE"
                         step["timestamp"] = datetime.utcnow().isoformat()
                 break
@@ -135,7 +169,7 @@ def log_run_failed(run_id: str, error_msg: str):
                 run["status"] = "FAILED"
                 run["error"] = error_msg
                 for step in run.get("pipeline_steps", []):
-                    if step["pipeline_step"] == "feature":
+                    if step["status"] == "RUNNING":
                         step["status"] = "FAILED"
                         step["timestamp"] = datetime.utcnow().isoformat()
                 break
@@ -158,7 +192,21 @@ def run_full_pipeline(file_path: str, alert_manager=None) -> str:
     log_run_start(run_id, file_path, file_hash)
     
     try:
+        # Step 1: Feature Pipeline
+        update_pipeline_step_status(run_id, "feature", "RUNNING")
         run_feature_pipeline(file_path, run_id, alert_manager)
+        update_pipeline_step_status(run_id, "feature", "COMPLETE")
+        
+        # Step 2: Training Pipeline
+        update_pipeline_step_status(run_id, "training", "RUNNING")
+        run_training_pipeline(run_id, alert_manager)
+        update_pipeline_step_status(run_id, "training", "COMPLETE")
+        
+        # Step 3: Inference Pipeline
+        update_pipeline_step_status(run_id, "inference", "RUNNING")
+        run_inference_pipeline(run_id, alert_manager)
+        update_pipeline_step_status(run_id, "inference", "COMPLETE")
+        
         alert_manager.save()
         log_run_complete(run_id)
     except Exception as e:
