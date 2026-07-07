@@ -1,0 +1,38 @@
+[
+  {
+    "run_id": "run_20260705_115443_d367a263",
+    "file_path": "tests/qa_data/canonical/file1_baseline_healthy.csv",
+    "file_hash": "eb46b893bce8bd56927c142b35248dfe",
+    "status": "COMPLETE",
+    "started_at": "2026-07-05T11:54:43.122414",
+    "completed_at": "2026-07-05T11:54:54.091579",
+    "error": null,
+    "pipeline_steps": [
+      {
+        "pipeline_step": "feature",
+        "status": "COMPLETE",
+        "timestamp": "2026-07-05T11:54:43.382182"
+      },
+      {
+        "pipeline_step": "training",
+        "status": "COMPLETE",
+        "timestamp": "2026-07-05T11:54:52.679636"
+      },
+      {
+        "pipeline_step": "inference",
+        "status": "COMPLETE",
+        "timestamp": "2026-07-05T11:54:53.171304"
+      },
+      {
+        "pipeline_step": "forecasting",
+        "status": "COMPLETE",
+        "timestamp": "2026-07-05T11:54:53.252638"
+      },
+      {
+        "pipeline_step": "risk",
+        "status": "COMPLETE",
+        "timestamp": "2026-07-05T11:54:54.032271"
+      }
+    ]
+  }
+]

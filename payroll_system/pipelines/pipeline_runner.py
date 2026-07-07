@@ -7,6 +7,8 @@ from config.settings import generate_run_id, AUDIT_LOG_DIR
 from pipelines.p1_feature import run_feature_pipeline
 from pipelines.p2_training import run_training_pipeline
 from pipelines.p3_inference import run_inference_pipeline
+from pipelines.p4_forecasting import run_forecasting_pipeline
+from pipelines.p5_risk import run_risk_pipeline
 
 class AlertManagerStub:
     def __init__(self, run_id: str):
@@ -96,7 +98,7 @@ def log_run_start(run_id: str, file_path: str, file_hash: str):
         except Exception:
             runs = []
             
-    # Add new run entry with feature, training, and inference steps
+    # Add new run entry with feature, training, inference, forecasting, and risk steps
     new_run = {
         "run_id": run_id,
         "file_path": file_path,
@@ -108,7 +110,9 @@ def log_run_start(run_id: str, file_path: str, file_hash: str):
         "pipeline_steps": [
             {"pipeline_step": "feature", "status": "PENDING", "timestamp": datetime.utcnow().isoformat()},
             {"pipeline_step": "training", "status": "PENDING", "timestamp": datetime.utcnow().isoformat()},
-            {"pipeline_step": "inference", "status": "PENDING", "timestamp": datetime.utcnow().isoformat()}
+            {"pipeline_step": "inference", "status": "PENDING", "timestamp": datetime.utcnow().isoformat()},
+            {"pipeline_step": "forecasting", "status": "PENDING", "timestamp": datetime.utcnow().isoformat()},
+            {"pipeline_step": "risk", "status": "PENDING", "timestamp": datetime.utcnow().isoformat()}
         ]
     }
     runs.append(new_run)
@@ -206,6 +210,16 @@ def run_full_pipeline(file_path: str, alert_manager=None) -> str:
         update_pipeline_step_status(run_id, "inference", "RUNNING")
         run_inference_pipeline(run_id, alert_manager)
         update_pipeline_step_status(run_id, "inference", "COMPLETE")
+        
+        # Step 4: Forecasting Pipeline
+        update_pipeline_step_status(run_id, "forecasting", "RUNNING")
+        run_forecasting_pipeline(run_id, alert_manager)
+        update_pipeline_step_status(run_id, "forecasting", "COMPLETE")
+        
+        # Step 5: Risk Monitoring Pipeline
+        update_pipeline_step_status(run_id, "risk", "RUNNING")
+        run_risk_pipeline(run_id, alert_manager)
+        update_pipeline_step_status(run_id, "risk", "COMPLETE")
         
         alert_manager.save()
         log_run_complete(run_id)
