@@ -157,3 +157,10 @@ COPY . .
 EXPOSE 8000
 CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
 ```
+
+---
+
+## 👥 Author
+
+Developed and maintained by [Codigoaprendiza02](https://github.com/Codigoaprendiza02).
+
