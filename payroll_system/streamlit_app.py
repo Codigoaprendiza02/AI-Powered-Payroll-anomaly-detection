@@ -12,11 +12,9 @@ import plotly.graph_objects as go
 
 # Defensive sys.path append for imports when run from different directories
 current_dir = Path(__file__).resolve().parent
-repo_root = current_dir.parent
 if str(current_dir) not in sys.path:
     sys.path.insert(0, str(current_dir))
-if str(repo_root) not in sys.path:
-    sys.path.insert(0, str(repo_root))
+
 
 
 from config.settings import (
