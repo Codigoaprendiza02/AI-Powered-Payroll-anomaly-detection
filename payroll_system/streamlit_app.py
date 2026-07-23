@@ -402,39 +402,24 @@ with tab_profiles:
                 # Render table
                 st.markdown(f"**Flagged Employees List ({len(df_disp)} records shown):**")
                 
-                # Display table using HTML for cleaner visual style
-                rows_html = ""
-                for _, r in df_disp.iterrows():
-                    tier_class = "badge-red" if str(r.get("risk_tier")).upper() in ["HIGH", "CRITICAL"] else "badge-amber"
-                    rows_html += f"""
-                    <tr>
-                        <td><strong>{r['employee_id']}</strong></td>
-                        <td>{r.get('department', 'N/A')}</td>
-                        <td>{r.get('designation', 'N/A')}</td>
-                        <td>${r.get('net_salary', r.get('take_home', 0.0)):,.2f}</td>
-                        <td><span class="badge {tier_class}">{r.get('risk_tier', 'HIGH')}</span></td>
-                        <td>{r.get('risk_score', r.get('anomaly_score', 0.0)):.3f}</td>
-                    </tr>
-                    """
+                # Display table of rows and columns using st.dataframe
+                df_table = df_disp.copy()
+                # Ensure columns are ordered and named nicely
+                cols_to_keep = ["employee_id", "department", "designation", "net_salary", "risk_tier", "risk_score"]
+                # Map any alternate column names
+                if "take_home" in df_table.columns and "net_salary" not in df_table.columns:
+                    df_table["net_salary"] = df_table["take_home"]
+                if "anomaly_score" in df_table.columns and "risk_score" not in df_table.columns:
+                    df_table["risk_score"] = df_table["anomaly_score"]
                 
-                table_html = f"""
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Employee ID</th>
-                            <th>Department</th>
-                            <th>Designation</th>
-                            <th>Net Pay</th>
-                            <th>Risk Tier</th>
-                            <th>Anomaly Score</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {rows_html}
-                    </tbody>
-                </table>
-                """
-                st.markdown(table_html, unsafe_allow_html=True)
+                # Filter to available requested columns
+                cols_present = [c for c in cols_to_keep if c in df_table.columns]
+                df_table = df_table[cols_present]
+                
+                # Format headers for display
+                df_table.columns = [c.replace("_", " ").title() for c in df_table.columns]
+                
+                st.dataframe(df_table, use_container_width=True, hide_index=True)
                 st.write("")
                 
                 # Select employee details card
@@ -601,31 +586,15 @@ with tab_system:
         "Run Audit Logging Store": Path(AUDIT_LOG_DIR).exists()
     }
     
-    health_rows = ""
-    for k, v in components.items():
-        status_label = "HEALTHY (Directory Found)" if v else "ERROR (Missing Directory)"
-        status_class = "badge-green" if v else "badge-red"
-        health_rows += f"""
-        <tr>
-            <td><strong>{k}</strong></td>
-            <td><span class="badge {status_class}">{status_label}</span></td>
-        </tr>
-        """
-        
-    health_table_html = f"""
-    <table class="data-table" style="max-width: 600px;">
-        <thead>
-            <tr>
-                <th>Component Engine</th>
-                <th>Diagnostic Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            {health_rows}
-        </tbody>
-    </table>
-    """
-    st.markdown(health_table_html, unsafe_allow_html=True)
+    # Render component health as a table of rows and columns
+    df_health = pd.DataFrame([
+        {
+            "Component Engine": k,
+            "Diagnostic Status": "🟢 HEALTHY" if v else "🔴 ERROR (Missing Directory)"
+        }
+        for k, v in components.items()
+    ])
+    st.table(df_health)
     
     # 2. Alerts Log
     st.write("")
