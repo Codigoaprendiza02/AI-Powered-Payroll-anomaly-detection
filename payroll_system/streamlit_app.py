@@ -608,40 +608,26 @@ with tab_system:
                     alerts = json.load(f)
                     
                 if alerts:
-                    alerts_rows = ""
-                    for a in alerts:
-                        sev = a.get("severity", "INFO")
-                        sev_class = "badge-red" if sev == "CRITICAL" else ("badge-amber" if sev == "HIGH" else "badge-blue")
+                    df_alerts = pd.DataFrame(alerts)
+                    # Select and rename columns for display
+                    cols_mapping = {
+                        "timestamp": "Timestamp",
+                        "severity": "Severity",
+                        "alert_type": "Alert Type",
+                        "affected_entity": "Affected Component",
+                        "trigger_value": "Trigger Value",
+                        "recommended_action": "Action Recommendation"
+                    }
+                    # Filter and reorder columns
+                    present_cols = [c for c in cols_mapping.keys() if c in df_alerts.columns]
+                    df_alerts = df_alerts[present_cols]
+                    df_alerts = df_alerts.rename(columns=cols_mapping)
+                    
+                    # Format timestamp if present
+                    if "Timestamp" in df_alerts.columns:
+                        df_alerts["Timestamp"] = df_alerts["Timestamp"].astype(str).str.slice(0, 19)
                         
-                        alerts_rows += f"""
-                        <tr>
-                            <td>{a.get('timestamp', 'N/A')[:19]}</td>
-                            <td><span class="badge {sev_class}">{sev}</span></td>
-                            <td>{a.get('alert_type', 'N/A')}</td>
-                            <td>{a.get('affected_entity', 'N/A')}</td>
-                            <td>{a.get('trigger_value', 'N/A')}</td>
-                            <td>{a.get('recommended_action', 'N/A')}</td>
-                        </tr>
-                        """
-                        
-                    alerts_table_html = f"""
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Timestamp</th>
-                                <th>Severity</th>
-                                <th>Alert Type</th>
-                                <th>Affected Component</th>
-                                <th>Trigger Value</th>
-                                <th>Action Recommendation</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {alerts_rows}
-                        </tbody>
-                    </table>
-                    """
-                    st.markdown(alerts_table_html, unsafe_allow_html=True)
+                    st.dataframe(df_alerts, use_container_width=True, hide_index=True)
                 else:
                     st.success("Ideal Status: 0 active system anomalies flagged for this run.")
             except Exception as e:
