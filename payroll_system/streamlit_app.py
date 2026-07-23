@@ -539,32 +539,15 @@ with tab_analytics:
                     
                     feature_psi = drift_data.get("feature_psi", {})
                     if feature_psi:
-                        drift_rows = ""
-                        for col, psi_val in feature_psi.items():
-                            stat_class = "badge-green" if psi_val < 0.1 else ("badge-amber" if psi_val <= 0.25 else "badge-red")
-                            drift_rows += f"""
-                            <tr>
-                                <td>{col}</td>
-                                <td>{psi_val:.4f}</td>
-                                <td><span class="badge {stat_class}">{"Normal" if psi_val < 0.1 else ("Moderate" if psi_val <= 0.25 else "Action Required")}</span></td>
-                            </tr>
-                            """
-                            
-                        drift_table_html = f"""
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Evaluated Feature Column</th>
-                                    <th>PSI Value Score</th>
-                                    <th>Alert Indicator</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {drift_rows}
-                            </tbody>
-                        </table>
-                        """
-                        st.markdown(drift_table_html, unsafe_allow_html=True)
+                        df_drift = pd.DataFrame([
+                            {
+                                "Evaluated Feature Column": col,
+                                "PSI Value Score": round(psi_val, 4),
+                                "Alert Indicator": "Normal" if psi_val < 0.1 else ("Moderate" if psi_val <= 0.25 else "Action Required")
+                            }
+                            for col, psi_val in feature_psi.items()
+                        ])
+                        st.dataframe(df_drift, use_container_width=True, hide_index=True)
             except Exception as e:
                 st.error(f"Error parsing drift report: {str(e)}")
         else:
