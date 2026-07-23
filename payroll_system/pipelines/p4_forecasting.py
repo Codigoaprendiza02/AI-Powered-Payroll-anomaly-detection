@@ -6,7 +6,7 @@ from pathlib import Path
 from datetime import datetime
 from sklearn.linear_model import LinearRegression
 
-from config.settings import FORECASTS_DIR, DRIFT_STORE_DIR
+from config.settings import FORECASTS_DIR, DRIFT_STORE_DIR, AUDIT_LOG_DIR
 from pipelines.p1_feature import read_feature_store
 
 def find_date_column(df: pd.DataFrame) -> str | None:
@@ -234,9 +234,9 @@ def run_forecasting_pipeline(run_id: str, alert_manager) -> dict:
             with open(drift_path, "r") as f:
                 drift_data = json.load(f)
                 severity = drift_data.get("severity", "")
-                if severity == "Significant":
+                if severity in ["Significant", "Significant Drift"]:
                     drift_multiplier = 1.10
-                elif severity == "Moderate":
+                elif severity in ["Moderate", "Moderate Drift"]:
                     drift_multiplier = 1.05
         except Exception:
             pass
@@ -294,6 +294,17 @@ def run_forecasting_pipeline(run_id: str, alert_manager) -> dict:
         except Exception:
             history_list = []
             
+    # Look up forecast MAPE from training report
+    forecast_mape = 0.0
+    training_report_path = Path(AUDIT_LOG_DIR) / f"{run_id}_training_report.json"
+    if training_report_path.exists():
+        try:
+            with open(training_report_path, "r") as f:
+                tr = json.load(f)
+                forecast_mape = tr.get("models", {}).get("company_payroll_forecaster", {}).get("metrics", {}).get("mape", 0.0)
+        except Exception:
+            pass
+
     actual_total_payroll = float(df["net_salary"].sum()) if "net_salary" in df.columns else 0.0
     
     history_entry = {
@@ -304,6 +315,7 @@ def run_forecasting_pipeline(run_id: str, alert_manager) -> dict:
         "drift_multiplier_applied": drift_multiplier,
         "actual_total": actual_total_payroll,
         "last_actual_total": actual_total_payroll,
+        "forecast_mape": forecast_mape,
         "timestamp": datetime.utcnow().isoformat()
     }
     history_list.append(history_entry)

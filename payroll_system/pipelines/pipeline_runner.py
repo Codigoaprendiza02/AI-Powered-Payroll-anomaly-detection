@@ -9,34 +9,15 @@ from pipelines.p2_training import run_training_pipeline
 from pipelines.p3_inference import run_inference_pipeline
 from pipelines.p4_forecasting import run_forecasting_pipeline
 from pipelines.p5_risk import run_risk_pipeline
+from pipelines.p6_drift_monitor import run_drift_monitoring
+from pipelines.p7_drift_handle import run_drift_handling
+from pipelines.p8_alerting import AlertManager, run_alerting_pipeline
 
-class AlertManagerStub:
+class AlertManagerStub(AlertManager):
     def __init__(self, run_id: str):
-        self.run_id = run_id
-        self.alerts = []
-        self._seen = set()
-        
-    def emit(self, alert_type: str, severity: str, affected_entity: str,
-             trigger_value=None, threshold_value=None, recommended_action: str = ""):
-        key = f"{alert_type}::{affected_entity}"
-        if key in self._seen:
-            return
-        self._seen.add(key)
-        self.alerts.append({
-            "alert_type": alert_type,
-            "severity": severity,
-            "run_id": self.run_id,
-            "timestamp": datetime.utcnow().isoformat(),
-            "affected_entity": str(affected_entity),
-            "trigger_value": trigger_value,
-            "threshold_value": threshold_value,
-            "recommended_action": recommended_action
-        })
-        
-    def save(self):
-        alerts_path = Path(AUDIT_LOG_DIR) / f"{self.run_id}_alerts.json"
-        with open(alerts_path, "w") as f:
-            json.dump(self.alerts, f, indent=2)
+        super().__init__(run_id)
+        self._seen = self._seen_keys
+
 
 def compute_md5(file_path: str) -> str:
     hasher = hashlib.md5()
@@ -112,7 +93,10 @@ def log_run_start(run_id: str, file_path: str, file_hash: str):
             {"pipeline_step": "training", "status": "PENDING", "timestamp": datetime.utcnow().isoformat()},
             {"pipeline_step": "inference", "status": "PENDING", "timestamp": datetime.utcnow().isoformat()},
             {"pipeline_step": "forecasting", "status": "PENDING", "timestamp": datetime.utcnow().isoformat()},
-            {"pipeline_step": "risk", "status": "PENDING", "timestamp": datetime.utcnow().isoformat()}
+            {"pipeline_step": "risk", "status": "PENDING", "timestamp": datetime.utcnow().isoformat()},
+            {"pipeline_step": "drift_monitoring", "status": "PENDING", "timestamp": datetime.utcnow().isoformat()},
+            {"pipeline_step": "drift_handling", "status": "PENDING", "timestamp": datetime.utcnow().isoformat()},
+            {"pipeline_step": "alerting", "status": "PENDING", "timestamp": datetime.utcnow().isoformat()}
         ]
     }
     runs.append(new_run)
@@ -191,7 +175,7 @@ def run_full_pipeline(file_path: str, alert_manager=None) -> str:
         
     run_id = generate_run_id()
     if alert_manager is None:
-        alert_manager = AlertManagerStub(run_id)
+        alert_manager = AlertManager(run_id)
         
     log_run_start(run_id, file_path, file_hash)
     
@@ -221,8 +205,20 @@ def run_full_pipeline(file_path: str, alert_manager=None) -> str:
         run_risk_pipeline(run_id, alert_manager)
         update_pipeline_step_status(run_id, "risk", "COMPLETE")
         
-        alert_manager.save()
-        log_run_complete(run_id)
+        # Step 6: Drift Monitoring Pipeline
+        update_pipeline_step_status(run_id, "drift_monitoring", "RUNNING")
+        drift_result = run_drift_monitoring(run_id, alert_manager)
+        update_pipeline_step_status(run_id, "drift_monitoring", "COMPLETE")
+        
+        # Step 7: Drift Handling Pipeline
+        update_pipeline_step_status(run_id, "drift_handling", "RUNNING")
+        run_drift_handling(run_id, drift_result, alert_manager)
+        update_pipeline_step_status(run_id, "drift_handling", "COMPLETE")
+        
+        # Step 8: Alerting & Output Pipeline
+        update_pipeline_step_status(run_id, "alerting", "RUNNING")
+        run_alerting_pipeline(run_id, alert_manager)
+        update_pipeline_step_status(run_id, "alerting", "COMPLETE")
     except Exception as e:
         alert_manager.emit("PIPELINE_FAILURE_ALERT", "CRITICAL", "system",
                            trigger_value=str(e), recommended_action="Investigate pipeline logs immediately.")

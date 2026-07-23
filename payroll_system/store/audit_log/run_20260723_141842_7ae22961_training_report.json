@@ -1,6 +1,6 @@
 {
-  "run_id": "run_20260705_115443_d367a263",
-  "timestamp": "2026-07-05T11:54:43.439819",
+  "run_id": "run_20260723_141842_7ae22961",
+  "timestamp": "2026-07-23T14:18:42.995461",
   "cold_start": true,
   "models": {
     "anomaly_detector": {

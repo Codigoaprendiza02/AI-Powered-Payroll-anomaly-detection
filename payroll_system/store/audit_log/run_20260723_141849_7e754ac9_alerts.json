@@ -1,0 +1,982 @@
+[
+  {
+    "alert_type": "RETRAIN_FAILED",
+    "severity": "WARNING",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:50.803784",
+    "affected_entity": "absenteeism_classifier",
+    "trigger_value": 1.0,
+    "threshold_value": 1.05,
+    "recommended_action": "Retrained absenteeism classifier did not improve F1 score by 5%. Retained champion."
+  },
+  {
+    "alert_type": "RETRAIN_FAILED",
+    "severity": "WARNING",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:51.722603",
+    "affected_entity": "salary_manipulation_detector",
+    "trigger_value": 0.21405143293015144,
+    "threshold_value": 0.3245219825734304,
+    "recommended_action": "Retrained salary manipulation detector did not improve F1 score by 5%. Retained champion."
+  },
+  {
+    "alert_type": "HIGH_RISK_EMPLOYEE_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.126958",
+    "affected_entity": "E009",
+    "trigger_value": 0.7230095170234839,
+    "threshold_value": null,
+    "recommended_action": "Risk Tier: HIGH (Score: 0.72). Rules violated: 2/3. Details: salary_diff (-0) exceeded 1\u03c3 (0); salary_dev_pct (-5.5%) exceeded 1\u03c3 (4.3%). Robust Z-Scores: Z-base: -2.03, Z-dev: -1.56. Model Anomaly Score: 0.73"
+  },
+  {
+    "alert_type": "HIGH_RISK_EMPLOYEE_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.127314",
+    "affected_entity": "E019",
+    "trigger_value": 0.6119561117822875,
+    "threshold_value": null,
+    "recommended_action": "Risk Tier: HIGH (Score: 0.61). Rules violated: 1/3. Details: salary_dev_pct (4.7%) exceeded 1\u03c3 (4.3%). Robust Z-Scores: Z-base: 2.66, Z-dev: 1.34. Model Anomaly Score: 0.71"
+  },
+  {
+    "alert_type": "HIGH_RISK_EMPLOYEE_ALERT",
+    "severity": "CRITICAL",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.127882",
+    "affected_entity": "E036",
+    "trigger_value": 0.8387746670408602,
+    "threshold_value": null,
+    "recommended_action": "Risk Tier: CRITICAL (Score: 0.84). Rules violated: 2/3. Details: salary_diff (-1) exceeded 1\u03c3 (0); salary_dev_pct (4.9%) exceeded 1\u03c3 (4.3%). Robust Z-Scores: Z-base: 2.67, Z-dev: 1.41. Model Anomaly Score: 1.00"
+  },
+  {
+    "alert_type": "HIGH_RISK_EMPLOYEE_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.128158",
+    "affected_entity": "E044",
+    "trigger_value": 0.7320511659045994,
+    "threshold_value": null,
+    "recommended_action": "Risk Tier: HIGH (Score: 0.73). Rules violated: 2/3. Details: salary_diff (-1) exceeded 1\u03c3 (0); salary_dev_pct (-6.9%) exceeded 1\u03c3 (4.3%). Robust Z-Scores: Z-base: 1.84, Z-dev: -1.96. Model Anomaly Score: 0.71"
+  },
+  {
+    "alert_type": "HIGH_RISK_EMPLOYEE_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.128239",
+    "affected_entity": "E046",
+    "trigger_value": 0.6156933799861957,
+    "threshold_value": null,
+    "recommended_action": "Risk Tier: HIGH (Score: 0.62). Rules violated: 2/3. Details: salary_diff (-0) exceeded 1\u03c3 (0); salary_dev_pct (5.7%) exceeded 1\u03c3 (4.3%). Robust Z-Scores: Z-base: -1.71, Z-dev: 1.64. Model Anomaly Score: 0.43"
+  },
+  {
+    "alert_type": "HIGH_RISK_EMPLOYEE_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.128351",
+    "affected_entity": "E049",
+    "trigger_value": 0.6373110887163679,
+    "threshold_value": null,
+    "recommended_action": "Risk Tier: HIGH (Score: 0.64). Rules violated: 1/3. Details: salary_dev_pct (4.5%) exceeded 1\u03c3 (4.3%). Robust Z-Scores: Z-base: 2.65, Z-dev: 1.30. Model Anomaly Score: 0.80"
+  },
+  {
+    "alert_type": "HIGH_RISK_EMPLOYEE_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.128495",
+    "affected_entity": "E053",
+    "trigger_value": 0.6097867314078551,
+    "threshold_value": null,
+    "recommended_action": "Risk Tier: HIGH (Score: 0.61). Rules violated: 1/3. Details: salary_diff (-1) exceeded 1\u03c3 (0). Robust Z-Scores: Z-base: 2.52, Z-dev: 0.78. Model Anomaly Score: 0.87"
+  },
+  {
+    "alert_type": "HIGH_RISK_EMPLOYEE_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.128576",
+    "affected_entity": "E055",
+    "trigger_value": 0.6426906909163231,
+    "threshold_value": null,
+    "recommended_action": "Risk Tier: HIGH (Score: 0.64). Rules violated: 2/3. Details: salary_diff (-0) exceeded 1\u03c3 (0); salary_dev_pct (-5.1%) exceeded 1\u03c3 (4.3%). Robust Z-Scores: Z-base: 1.97, Z-dev: -1.43. Model Anomaly Score: 0.51"
+  },
+  {
+    "alert_type": "HIGH_RISK_EMPLOYEE_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.128701",
+    "affected_entity": "E058",
+    "trigger_value": 0.6301562629136908,
+    "threshold_value": null,
+    "recommended_action": "Risk Tier: HIGH (Score: 0.63). Rules violated: 2/3. Details: salary_diff (-0) exceeded 1\u03c3 (0); salary_dev_pct (6.9%) exceeded 1\u03c3 (4.3%). Robust Z-Scores: Z-base: 1.02, Z-dev: 1.98. Model Anomaly Score: 0.56"
+  },
+  {
+    "alert_type": "HIGH_RISK_EMPLOYEE_ALERT",
+    "severity": "CRITICAL",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.129158",
+    "affected_entity": "E071",
+    "trigger_value": 0.8194994965519318,
+    "threshold_value": null,
+    "recommended_action": "Risk Tier: CRITICAL (Score: 0.82). Rules violated: 2/3. Details: salary_diff (-0) exceeded 1\u03c3 (0); salary_dev_pct (6.0%) exceeded 1\u03c3 (4.3%). Robust Z-Scores: Z-base: 2.75, Z-dev: 1.72. Model Anomaly Score: 0.84"
+  },
+  {
+    "alert_type": "HIGH_RISK_EMPLOYEE_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.129399",
+    "affected_entity": "E078",
+    "trigger_value": 0.6304175771348701,
+    "threshold_value": null,
+    "recommended_action": "Risk Tier: HIGH (Score: 0.63). Rules violated: 2/3. Details: salary_diff (-1) exceeded 1\u03c3 (0); salary_dev_pct (-7.9%) exceeded 1\u03c3 (4.3%). Robust Z-Scores: Z-base: -1.31, Z-dev: -2.23. Model Anomaly Score: 0.44"
+  },
+  {
+    "alert_type": "HIGH_RISK_EMPLOYEE_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.129512",
+    "affected_entity": "E081",
+    "trigger_value": 0.655625215586081,
+    "threshold_value": null,
+    "recommended_action": "Risk Tier: HIGH (Score: 0.66). Rules violated: 2/3. Details: salary_diff (-1) exceeded 1\u03c3 (0); salary_dev_pct (-6.3%) exceeded 1\u03c3 (4.3%). Robust Z-Scores: Z-base: -1.25, Z-dev: -1.79. Model Anomaly Score: 0.64"
+  },
+  {
+    "alert_type": "HIGH_RISK_EMPLOYEE_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.129953",
+    "affected_entity": "E094",
+    "trigger_value": 0.6890474041925276,
+    "threshold_value": null,
+    "recommended_action": "Risk Tier: HIGH (Score: 0.69). Rules violated: 2/3. Details: salary_diff (-1) exceeded 1\u03c3 (0); salary_dev_pct (-6.1%) exceeded 1\u03c3 (4.3%). Robust Z-Scores: Z-base: 1.90, Z-dev: -1.71. Model Anomaly Score: 0.61"
+  },
+  {
+    "alert_type": "HIGH_RISK_EMPLOYEE_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.130099",
+    "affected_entity": "E098",
+    "trigger_value": 0.6224050710064065,
+    "threshold_value": null,
+    "recommended_action": "Risk Tier: HIGH (Score: 0.62). Rules violated: 2/3. Details: salary_diff (-1) exceeded 1\u03c3 (0); salary_dev_pct (7.1%) exceeded 1\u03c3 (4.3%). Robust Z-Scores: Z-base: 1.03, Z-dev: 2.03. Model Anomaly Score: 0.53"
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.316365",
+    "affected_entity": "E001",
+    "trigger_value": 0.98,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.98 exceeds threshold 0.7 for employee E001."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.316456",
+    "affected_entity": "E002",
+    "trigger_value": 0.99,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.99 exceeds threshold 0.7 for employee E002."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.316613",
+    "affected_entity": "E004",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E004."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.316753",
+    "affected_entity": "E006",
+    "trigger_value": 0.99,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.99 exceeds threshold 0.7 for employee E006."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.316832",
+    "affected_entity": "E007",
+    "trigger_value": 0.99,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.99 exceeds threshold 0.7 for employee E007."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.316911",
+    "affected_entity": "E008",
+    "trigger_value": 0.98,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.98 exceeds threshold 0.7 for employee E008."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.316990",
+    "affected_entity": "E009",
+    "trigger_value": 0.99,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.99 exceeds threshold 0.7 for employee E009."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.317186",
+    "affected_entity": "E012",
+    "trigger_value": 0.97,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.97 exceeds threshold 0.7 for employee E012."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.317322",
+    "affected_entity": "E014",
+    "trigger_value": 0.98,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.98 exceeds threshold 0.7 for employee E014."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.317459",
+    "affected_entity": "E016",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E016."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.317538",
+    "affected_entity": "E017",
+    "trigger_value": 0.99,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.99 exceeds threshold 0.7 for employee E017."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.317616",
+    "affected_entity": "E018",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E018."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.317809",
+    "affected_entity": "E021",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E021."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.317886",
+    "affected_entity": "E022",
+    "trigger_value": 0.98,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.98 exceeds threshold 0.7 for employee E022."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.318021",
+    "affected_entity": "E024",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E024."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.318099",
+    "affected_entity": "E025",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E025."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.318176",
+    "affected_entity": "E026",
+    "trigger_value": 0.99,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.99 exceeds threshold 0.7 for employee E026."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.318257",
+    "affected_entity": "E027",
+    "trigger_value": 0.99,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.99 exceeds threshold 0.7 for employee E027."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.318394",
+    "affected_entity": "E029",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E029."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.318472",
+    "affected_entity": "E030",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E030."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.318550",
+    "affected_entity": "E031",
+    "trigger_value": 0.99,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.99 exceeds threshold 0.7 for employee E031."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.318642",
+    "affected_entity": "E032",
+    "trigger_value": 0.98,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.98 exceeds threshold 0.7 for employee E032."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.318722",
+    "affected_entity": "E033",
+    "trigger_value": 0.98,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.98 exceeds threshold 0.7 for employee E033."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.318809",
+    "affected_entity": "E034",
+    "trigger_value": 0.98,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.98 exceeds threshold 0.7 for employee E034."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.319012",
+    "affected_entity": "E037",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E037."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.319092",
+    "affected_entity": "E038",
+    "trigger_value": 0.99,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.99 exceeds threshold 0.7 for employee E038."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.319290",
+    "affected_entity": "E041",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E041."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.319370",
+    "affected_entity": "E042",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E042."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.319450",
+    "affected_entity": "E043",
+    "trigger_value": 0.98,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.98 exceeds threshold 0.7 for employee E043."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.319529",
+    "affected_entity": "E044",
+    "trigger_value": 0.97,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.97 exceeds threshold 0.7 for employee E044."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.319608",
+    "affected_entity": "E045",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E045."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.319805",
+    "affected_entity": "E048",
+    "trigger_value": 0.99,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.99 exceeds threshold 0.7 for employee E048."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.319885",
+    "affected_entity": "E049",
+    "trigger_value": 0.98,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.98 exceeds threshold 0.7 for employee E049."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.320021",
+    "affected_entity": "E051",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E051."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.320157",
+    "affected_entity": "E053",
+    "trigger_value": 0.99,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.99 exceeds threshold 0.7 for employee E053."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.320240",
+    "affected_entity": "E054",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E054."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.320375",
+    "affected_entity": "E056",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E056."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.320454",
+    "affected_entity": "E057",
+    "trigger_value": 0.98,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.98 exceeds threshold 0.7 for employee E057."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.320533",
+    "affected_entity": "E058",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E058."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.320627",
+    "affected_entity": "E059",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E059."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.320767",
+    "affected_entity": "E061",
+    "trigger_value": 0.99,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.99 exceeds threshold 0.7 for employee E061."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.320845",
+    "affected_entity": "E062",
+    "trigger_value": 0.99,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.99 exceeds threshold 0.7 for employee E062."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.320924",
+    "affected_entity": "E063",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E063."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.321062",
+    "affected_entity": "E065",
+    "trigger_value": 0.99,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.99 exceeds threshold 0.7 for employee E065."
+  },
+  {
+    "alert_type": "SALARY_MANIPULATION_ALERT",
+    "severity": "CRITICAL",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.321489",
+    "affected_entity": "E072",
+    "trigger_value": -0.030466727560033435,
+    "threshold_value": null,
+    "recommended_action": "Salary manipulation detected for employee E072."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.321699",
+    "affected_entity": "E075",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E075."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.321781",
+    "affected_entity": "E076",
+    "trigger_value": 0.96,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.96 exceeds threshold 0.7 for employee E076."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.321862",
+    "affected_entity": "E077",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E077."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.321940",
+    "affected_entity": "E078",
+    "trigger_value": 0.98,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.98 exceeds threshold 0.7 for employee E078."
+  },
+  {
+    "alert_type": "SALARY_MANIPULATION_ALERT",
+    "severity": "CRITICAL",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.321952",
+    "affected_entity": "E078",
+    "trigger_value": -0.01014360903499456,
+    "threshold_value": null,
+    "recommended_action": "Salary manipulation detected for employee E078."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.322088",
+    "affected_entity": "E080",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E080."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.322166",
+    "affected_entity": "E081",
+    "trigger_value": 0.98,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.98 exceeds threshold 0.7 for employee E081."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.322248",
+    "affected_entity": "E082",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E082."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.322440",
+    "affected_entity": "E085",
+    "trigger_value": 0.98,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.98 exceeds threshold 0.7 for employee E085."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.322576",
+    "affected_entity": "E087",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E087."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.322671",
+    "affected_entity": "E088",
+    "trigger_value": 0.99,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.99 exceeds threshold 0.7 for employee E088."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.322807",
+    "affected_entity": "E090",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E090."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.322888",
+    "affected_entity": "E091",
+    "trigger_value": 0.98,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.98 exceeds threshold 0.7 for employee E091."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.322973",
+    "affected_entity": "E092",
+    "trigger_value": 0.99,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.99 exceeds threshold 0.7 for employee E092."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.323280",
+    "affected_entity": "E097",
+    "trigger_value": 0.99,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 0.99 exceeds threshold 0.7 for employee E097."
+  },
+  {
+    "alert_type": "ABSENTEEISM_RISK_ALERT",
+    "severity": "MEDIUM",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.323372",
+    "affected_entity": "E098",
+    "trigger_value": 1.0,
+    "threshold_value": 0.7,
+    "recommended_action": "Absenteeism risk score 1.00 exceeds threshold 0.7 for employee E098."
+  },
+  {
+    "alert_type": "SALARY_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.406977",
+    "affected_entity": "base_salary",
+    "trigger_value": 3.8201665604387633,
+    "threshold_value": 0.25,
+    "recommended_action": "Salary feature 'base_salary' drifted with PSI=3.820. Auditing salary ranges."
+  },
+  {
+    "alert_type": "OVERTIME_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.406992",
+    "affected_entity": "overtime_hours",
+    "trigger_value": 1.5841596632071235,
+    "threshold_value": 0.25,
+    "recommended_action": "Overtime feature 'overtime_hours' drifted with PSI=1.584. Reviewing overtime policies."
+  },
+  {
+    "alert_type": "SALARY_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.406998",
+    "affected_entity": "overtime_pay_per_hour",
+    "trigger_value": 6.787309214394494,
+    "threshold_value": 0.25,
+    "recommended_action": "Salary feature 'overtime_pay_per_hour' drifted with PSI=6.787. Auditing salary ranges."
+  },
+  {
+    "alert_type": "OVERTIME_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.407002",
+    "affected_entity": "overtime_pay_per_hour",
+    "trigger_value": 6.787309214394494,
+    "threshold_value": 0.25,
+    "recommended_action": "Overtime feature 'overtime_pay_per_hour' drifted with PSI=6.787. Reviewing overtime policies."
+  },
+  {
+    "alert_type": "SALARY_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.407007",
+    "affected_entity": "net_salary",
+    "trigger_value": 3.060933850632441,
+    "threshold_value": 0.25,
+    "recommended_action": "Salary feature 'net_salary' drifted with PSI=3.061. Auditing salary ranges."
+  },
+  {
+    "alert_type": "SALARY_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.407013",
+    "affected_entity": "overtime_pay",
+    "trigger_value": 1.0012522506549435,
+    "threshold_value": 0.25,
+    "recommended_action": "Salary feature 'overtime_pay' drifted with PSI=1.001. Auditing salary ranges."
+  },
+  {
+    "alert_type": "OVERTIME_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.407017",
+    "affected_entity": "overtime_pay",
+    "trigger_value": 1.0012522506549435,
+    "threshold_value": 0.25,
+    "recommended_action": "Overtime feature 'overtime_pay' drifted with PSI=1.001. Reviewing overtime policies."
+  },
+  {
+    "alert_type": "SALARY_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.407022",
+    "affected_entity": "earned_base",
+    "trigger_value": 3.0968061955476602,
+    "threshold_value": 0.25,
+    "recommended_action": "Salary feature 'earned_base' drifted with PSI=3.097. Auditing salary ranges."
+  },
+  {
+    "alert_type": "SALARY_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.407027",
+    "affected_entity": "expected_gross_salary",
+    "trigger_value": 2.4510731825204704,
+    "threshold_value": 0.25,
+    "recommended_action": "Salary feature 'expected_gross_salary' drifted with PSI=2.451. Auditing salary ranges."
+  },
+  {
+    "alert_type": "SALARY_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.407032",
+    "affected_entity": "salary_diff",
+    "trigger_value": 8.283089355027482,
+    "threshold_value": 0.25,
+    "recommended_action": "Salary feature 'salary_diff' drifted with PSI=8.283. Auditing salary ranges."
+  },
+  {
+    "alert_type": "SALARY_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.407037",
+    "affected_entity": "salary_dev_pct",
+    "trigger_value": 3.3717757171883553,
+    "threshold_value": 0.25,
+    "recommended_action": "Salary feature 'salary_dev_pct' drifted with PSI=3.372. Auditing salary ranges."
+  },
+  {
+    "alert_type": "SALARY_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.407041",
+    "affected_entity": "robust_z_base_salary",
+    "trigger_value": 0.38521787871911894,
+    "threshold_value": 0.25,
+    "recommended_action": "Salary feature 'robust_z_base_salary' drifted with PSI=0.385. Auditing salary ranges."
+  },
+  {
+    "alert_type": "OVERTIME_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.407048",
+    "affected_entity": "robust_z_overtime_hours",
+    "trigger_value": 2.6721063085361427,
+    "threshold_value": 0.25,
+    "recommended_action": "Overtime feature 'robust_z_overtime_hours' drifted with PSI=2.672. Reviewing overtime policies."
+  },
+  {
+    "alert_type": "SALARY_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.407052",
+    "affected_entity": "robust_z_overtime_pay_per_hour",
+    "trigger_value": 8.28312949691444,
+    "threshold_value": 0.25,
+    "recommended_action": "Salary feature 'robust_z_overtime_pay_per_hour' drifted with PSI=8.283. Auditing salary ranges."
+  },
+  {
+    "alert_type": "OVERTIME_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.407057",
+    "affected_entity": "robust_z_overtime_pay_per_hour",
+    "trigger_value": 8.28312949691444,
+    "threshold_value": 0.25,
+    "recommended_action": "Overtime feature 'robust_z_overtime_pay_per_hour' drifted with PSI=8.283. Reviewing overtime policies."
+  },
+  {
+    "alert_type": "SALARY_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.407064",
+    "affected_entity": "robust_z_overtime_pay",
+    "trigger_value": 2.150043241848777,
+    "threshold_value": 0.25,
+    "recommended_action": "Salary feature 'robust_z_overtime_pay' drifted with PSI=2.150. Auditing salary ranges."
+  },
+  {
+    "alert_type": "OVERTIME_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.407069",
+    "affected_entity": "robust_z_overtime_pay",
+    "trigger_value": 2.150043241848777,
+    "threshold_value": 0.25,
+    "recommended_action": "Overtime feature 'robust_z_overtime_pay' drifted with PSI=2.150. Reviewing overtime policies."
+  },
+  {
+    "alert_type": "SALARY_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.407074",
+    "affected_entity": "robust_z_earned_base",
+    "trigger_value": 0.2823171558182315,
+    "threshold_value": 0.25,
+    "recommended_action": "Salary feature 'robust_z_earned_base' drifted with PSI=0.282. Auditing salary ranges."
+  },
+  {
+    "alert_type": "SALARY_DRIFT_ALERT",
+    "severity": "HIGH",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:52.407080",
+    "affected_entity": "robust_z_salary_diff",
+    "trigger_value": 0.8036590074940103,
+    "threshold_value": 0.25,
+    "recommended_action": "Salary feature 'robust_z_salary_diff' drifted with PSI=0.804. Auditing salary ranges."
+  },
+  {
+    "alert_type": "RETRAIN_FAILED",
+    "severity": "WARNING",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:53.293986",
+    "affected_entity": "anomaly_detector",
+    "trigger_value": 0.7522816399286988,
+    "threshold_value": 0.7898957219251338,
+    "recommended_action": "Retrained anomaly detector did not improve F1 score by 5%. Retained champion."
+  },
+  {
+    "alert_type": "RETRAIN_FAILED",
+    "severity": "WARNING",
+    "run_id": "run_20260723_141849_7e754ac9",
+    "timestamp": "2026-07-23T14:18:55.287748",
+    "affected_entity": "company_payroll_forecaster",
+    "trigger_value": 1.4522405003031632e-15,
+    "threshold_value": 1.379628475288005e-15,
+    "recommended_action": "Retrained payroll forecaster did not improve MAPE by 5%. Retained champion."
+  }
+]

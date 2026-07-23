@@ -1,37 +1,103 @@
 [
   {
-    "run_id": "run_20260705_115443_d367a263",
-    "file_path": "tests/qa_data/canonical/file1_baseline_healthy.csv",
+    "run_id": "run_20260723_141842_7ae22961",
+    "file_path": "C:\\Users\\riyan\\AppData\\Local\\Temp\\tmpng278vrm.csv",
     "file_hash": "eb46b893bce8bd56927c142b35248dfe",
     "status": "COMPLETE",
-    "started_at": "2026-07-05T11:54:43.122414",
-    "completed_at": "2026-07-05T11:54:54.091579",
+    "started_at": "2026-07-23T14:18:42.775307",
+    "completed_at": "2026-07-23T14:18:48.843730",
     "error": null,
     "pipeline_steps": [
       {
         "pipeline_step": "feature",
         "status": "COMPLETE",
-        "timestamp": "2026-07-05T11:54:43.382182"
+        "timestamp": "2026-07-23T14:18:42.925319"
       },
       {
         "pipeline_step": "training",
         "status": "COMPLETE",
-        "timestamp": "2026-07-05T11:54:52.679636"
+        "timestamp": "2026-07-23T14:18:47.971412"
       },
       {
         "pipeline_step": "inference",
         "status": "COMPLETE",
-        "timestamp": "2026-07-05T11:54:53.171304"
+        "timestamp": "2026-07-23T14:18:48.238233"
       },
       {
         "pipeline_step": "forecasting",
         "status": "COMPLETE",
-        "timestamp": "2026-07-05T11:54:53.252638"
+        "timestamp": "2026-07-23T14:18:48.299811"
       },
       {
         "pipeline_step": "risk",
         "status": "COMPLETE",
-        "timestamp": "2026-07-05T11:54:54.032271"
+        "timestamp": "2026-07-23T14:18:48.666976"
+      },
+      {
+        "pipeline_step": "drift_monitoring",
+        "status": "COMPLETE",
+        "timestamp": "2026-07-23T14:18:48.706121"
+      },
+      {
+        "pipeline_step": "drift_handling",
+        "status": "COMPLETE",
+        "timestamp": "2026-07-23T14:18:48.729100"
+      },
+      {
+        "pipeline_step": "alerting",
+        "status": "COMPLETE",
+        "timestamp": "2026-07-23T14:18:48.854779"
+      }
+    ]
+  },
+  {
+    "run_id": "run_20260723_141849_7e754ac9",
+    "file_path": "C:\\Users\\riyan\\AppData\\Local\\Temp\\tmpdwoohhzy.csv",
+    "file_hash": "8238b3494be69519ef0380c0a1415f74",
+    "status": "COMPLETE",
+    "started_at": "2026-07-23T14:18:49.019637",
+    "completed_at": "2026-07-23T14:18:55.399353",
+    "error": null,
+    "pipeline_steps": [
+      {
+        "pipeline_step": "feature",
+        "status": "COMPLETE",
+        "timestamp": "2026-07-23T14:18:49.141099"
+      },
+      {
+        "pipeline_step": "training",
+        "status": "COMPLETE",
+        "timestamp": "2026-07-23T14:18:51.982755"
+      },
+      {
+        "pipeline_step": "inference",
+        "status": "COMPLETE",
+        "timestamp": "2026-07-23T14:18:52.140650"
+      },
+      {
+        "pipeline_step": "forecasting",
+        "status": "COMPLETE",
+        "timestamp": "2026-07-23T14:18:52.204148"
+      },
+      {
+        "pipeline_step": "risk",
+        "status": "COMPLETE",
+        "timestamp": "2026-07-23T14:18:52.344961"
+      },
+      {
+        "pipeline_step": "drift_monitoring",
+        "status": "COMPLETE",
+        "timestamp": "2026-07-23T14:18:52.423395"
+      },
+      {
+        "pipeline_step": "drift_handling",
+        "status": "COMPLETE",
+        "timestamp": "2026-07-23T14:18:55.339008"
+      },
+      {
+        "pipeline_step": "alerting",
+        "status": "COMPLETE",
+        "timestamp": "2026-07-23T14:18:55.410088"
       }
     ]
   }

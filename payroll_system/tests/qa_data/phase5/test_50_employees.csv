@@ -1,0 +1,51 @@
+emp_id,dept,title,basic_pay,days_present,business_days,ot_hours,ot_rate,take_home,loss_of_pay
+E001,Finance,Senior Engineer,85051,22,23,5,300,82853,1
+E002,HR,Analyst,47124,22,23,5,300,46575,1
+E003,Sales,Manager,63614,22,23,4,400,62448,1
+E004,Operations,Lead,55605,23,23,2,400,56405,0
+E005,Engineering,Junior Engineer,34333,21,23,2,300,31947,2
+E006,Finance,Senior Engineer,83725,23,23,3,300,84625,0
+E007,HR,Analyst,46235,20,23,2,300,40804,3
+E008,Sales,Manager,66316,21,23,8,400,63749,2
+E009,Operations,Lead,54643,22,23,5,400,54267,1
+E010,Engineering,Junior Engineer,35346,22,23,5,300,35309,1
+E011,Finance,Senior Engineer,82396,20,23,2,300,72248,3
+E012,HR,Analyst,43178,20,23,2,300,38146,3
+E013,Sales,Manager,65601,21,23,7,400,62696,2
+E014,Operations,Lead,57559,21,23,2,400,53353,2
+E015,Engineering,Junior Engineer,35657,22,23,7,300,36206,1
+E016,Finance,Senior Engineer,85993,21,23,9,300,81215,2
+E017,HR,Analyst,45328,22,23,6,300,45157,1
+E018,Sales,Manager,66753,23,23,4,400,68353,0
+E019,Operations,Lead,52458,21,23,8,400,51096,2
+E020,Engineering,Junior Engineer,33755,23,23,6,300,35555,0
+E021,Finance,Senior Engineer,86748,20,23,0,300,75433,3
+E022,HR,Analyst,43955,22,23,3,300,42943,1
+E023,Sales,Manager,63406,21,23,7,400,60692,2
+E024,Operations,Lead,53655,22,23,4,400,52922,1
+E025,Engineering,Junior Engineer,36725,23,23,7,300,38825,0
+E026,Finance,Senior Engineer,85430,21,23,6,300,79801,2
+E027,HR,Analyst,46539,20,23,0,300,40468,3
+E028,Sales,Manager,64737,21,23,8,400,62307,2
+E029,Operations,Lead,53701,23,23,5,400,55701,0
+E030,Engineering,Junior Engineer,36172,21,23,7,300,35126,2
+E031,Finance,Senior Engineer,89062,20,23,2,300,78045,3
+E032,HR,Analyst,45070,21,23,8,300,43550,2
+E033,Sales,Manager,67752,22,23,1,400,65206,1
+E034,Operations,Lead,54320,21,23,6,400,51996,2
+E035,Engineering,Junior Engineer,34138,20,23,5,300,31185,3
+E036,Finance,Senior Engineer,83128,21,23,3,300,76799,2
+E037,HR,Analyst,46193,21,23,7,300,44276,2
+E038,Sales,Manager,62497,23,23,9,400,66097,0
+E039,Operations,Lead,53798,23,23,6,400,56198,0
+E040,Engineering,Junior Engineer,35245,21,23,6,300,33980,2
+E041,Finance,Senior Engineer,84545,22,23,4,300,82069,1
+E042,HR,Analyst,46269,22,23,3,300,45157,1
+E043,Sales,Manager,63819,22,23,9,400,64644,1
+E044,Operations,Lead,52808,20,23,4,400,47520,3
+E045,Engineering,Junior Engineer,33882,23,23,5,300,35382,0
+E046,Finance,Senior Engineer,87717,23,23,0,300,87717,0
+E047,HR,Analyst,46710,21,23,2,300,43248,2
+E048,Sales,Manager,67391,23,23,8,400,70591,0
+E049,Operations,Lead,57121,23,23,2,400,57921,0
+E050,Engineering,Junior Engineer,34097,20,23,7,300,31749,3

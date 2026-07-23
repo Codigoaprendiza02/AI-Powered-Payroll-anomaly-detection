@@ -2,8 +2,9 @@ import os
 import json
 import pandas as pd
 import numpy as np
+from datetime import datetime
 from pathlib import Path
-from config.settings import FEATURES_STORE_DIR, AUDIT_LOG_DIR
+from config.settings import FEATURES_STORE_DIR, AUDIT_LOG_DIR, DRIFT_STORE_DIR
 
 # Custom Exceptions
 class DataCleaningError(Exception):
@@ -412,6 +413,36 @@ def read_feature_store(run_id: str) -> pd.DataFrame:
         raise FileNotFoundError(f"Feature file not found for run: {run_id}")
     return pd.read_parquet(in_path)
 
+def save_reference_distributions(df: pd.DataFrame, run_id: str):
+    distributions = {}
+    numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
+    for col in numeric_cols:
+        series = df[col]
+        distributions[col] = {
+            "mean": float(series.mean()) if not pd.isna(series.mean()) else 0.0,
+            "median": float(series.median()) if not pd.isna(series.median()) else 0.0,
+            "std": float(series.std()) if not pd.isna(series.std()) else 0.0,
+            "p25": float(series.quantile(0.25)) if not pd.isna(series.quantile(0.25)) else 0.0,
+            "p75": float(series.quantile(0.75)) if not pd.isna(series.quantile(0.75)) else 0.0
+        }
+    
+    value_counts = {
+        "department": df["department"].value_counts().to_dict() if "department" in df.columns else {},
+        "designation": df["designation"].value_counts().to_dict() if "designation" in df.columns else {}
+    }
+    
+    ref_data = {
+        "run_id": run_id,
+        "timestamp": datetime.utcnow().isoformat(),
+        "distributions": distributions,
+        "value_counts": value_counts
+    }
+    
+    ref_path = Path(DRIFT_STORE_DIR) / f"reference_{run_id}.json"
+    ref_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(ref_path, "w") as f:
+        json.dump(ref_data, f, indent=2)
+
 # Phase 1 Orchestrator
 def run_feature_pipeline(file_path: str, run_id: str, alert_manager=None) -> pd.DataFrame:
     # 1. Ingestion
@@ -431,5 +462,8 @@ def run_feature_pipeline(file_path: str, run_id: str, alert_manager=None) -> pd.
     
     # 6. Feature Store write
     write_feature_store(df_features, run_id)
+    
+    # 7. Save Reference Distributions (for drift monitoring)
+    save_reference_distributions(df_features, run_id)
     
     return df_features

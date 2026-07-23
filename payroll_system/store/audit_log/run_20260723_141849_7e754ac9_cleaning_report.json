@@ -1,6 +1,6 @@
 {
-  "run_id": "run_20260705_115443_d367a263",
-  "original_rows": 1000,
+  "run_id": "run_20260723_141849_7e754ac9",
+  "original_rows": 100,
   "steps": {
     "duplicates": 0,
     "nulls": {
@@ -20,7 +20,7 @@
       "lop_days"
     ]
   },
-  "rows_after_cleaning": 1000,
+  "rows_after_cleaning": 100,
   "rows_removed_total": 0,
   "removal_pct": 0.0
 }

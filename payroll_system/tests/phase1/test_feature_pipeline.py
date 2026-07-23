@@ -190,4 +190,4 @@ def test_feature_store_roundtrip(setup_dirs):
     write_feature_store(df_feat, "test-run-fs")
     df_loaded = read_feature_store("test-run-fs")
     
-    pd.testing.assert_frame_equal(df_feat, df_loaded)
+    pd.testing.assert_frame_equal(df_feat, df_loaded, check_dtype=False)

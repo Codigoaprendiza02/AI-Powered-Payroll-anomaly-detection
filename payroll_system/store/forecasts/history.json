@@ -1,6 +1,6 @@
 [
   {
-    "run_id": "run_20260705_115443_d367a263",
+    "run_id": "run_20260723_141842_7ae22961",
     "predicted_total": 69765402.0,
     "predicted_by_dept": {
       "Engineering": 13786982.0,
@@ -15,6 +15,24 @@
     "drift_multiplier_applied": 1.0,
     "actual_total": 69765402.0,
     "last_actual_total": 69765402.0,
-    "timestamp": "2026-07-05T11:54:53.236367"
+    "forecast_mape": 0.0,
+    "timestamp": "2026-07-23T14:18:48.289334"
+  },
+  {
+    "run_id": "run_20260723_141849_7e754ac9",
+    "predicted_total": 75303032.0,
+    "predicted_by_dept": {
+      "HR": 8586097.0,
+      "Sales": 9950011.0,
+      "Finance": 9917443.0,
+      "Operations": 9259433.0,
+      "Engineering": 14458607.0
+    },
+    "predicted_overtime": 5159.0,
+    "drift_multiplier_applied": 1.0,
+    "actual_total": 5537630.0,
+    "last_actual_total": 5537630.0,
+    "forecast_mape": 1.4522405003031632e-15,
+    "timestamp": "2026-07-23T14:18:52.192952"
   }
 ]

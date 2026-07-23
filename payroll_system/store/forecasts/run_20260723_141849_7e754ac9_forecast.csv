@@ -1,0 +1,9 @@
+metric,department,value
+total_payroll,All,75303032.0
+overtime_hours,All,5159.0
+drift_adjusted,All,False
+department_payroll,HR,8586097.0
+department_payroll,Sales,9950011.0
+department_payroll,Finance,9917443.0
+department_payroll,Operations,9259433.0
+department_payroll,Engineering,14458607.0

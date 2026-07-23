@@ -1,0 +1,35 @@
+{
+  "run_id": "run_20260723_141842_7ae22961",
+  "timestamp": "2026-07-23T14:18:48.763710",
+  "inference": {
+    "total_records": 1000,
+    "anomaly_rate": 0.035,
+    "risk_tiers": {
+      "LOW": 562,
+      "MEDIUM": 403,
+      "HIGH": 35
+    }
+  },
+  "risk_monitoring": {
+    "absenteeism_risk_count": 508,
+    "overtime_abuse_count": 103,
+    "salary_manipulation_count": 100
+  },
+  "forecasting": {
+    "total_payroll": 69765402.0,
+    "per_department": {
+      "Engineering": 13786982.0,
+      "Legal": 15724271.0,
+      "Operations": 8165133.0,
+      "Sales": 8838015.0,
+      "Marketing": 7407170.0,
+      "Finance": 8749895.0,
+      "HR": 7093936.0
+    },
+    "overtime_hours": 4572.0,
+    "drift_adjusted": false,
+    "drift_multiplier_applied": 1.0
+  },
+  "drift_monitoring": {},
+  "alerts_count": 644
+}
