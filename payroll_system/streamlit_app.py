@@ -610,7 +610,7 @@ with tab_system:
                     if "Timestamp" in df_alerts.columns:
                         df_alerts["Timestamp"] = df_alerts["Timestamp"].astype(str).str.slice(0, 19)
                         
-                    st.dataframe(df_alerts, use_container_width=True, hide_index=True)
+                    st.table(df_alerts)
                 else:
                     st.success("Ideal Status: 0 active system anomalies flagged for this run.")
             except Exception as e:
